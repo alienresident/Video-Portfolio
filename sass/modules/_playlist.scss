@@ -1,0 +1,104 @@
+//////////////////////////////
+// MODULES: Styles that are layout independent 
+//////////////////////////////
+
+.player.playlist {
+  main {
+    width: 1120px;
+    margin: 0 auto;
+  }
+  header {
+    width: 100%;
+  }
+  main article figure.videoplayer {
+    width: 1120px;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  main article figure.videoplayer .mejs-video, 
+  main article figure.videoplayer video {
+    width: 720px;
+    max-height: 408px;
+    float: left;
+    margin: 0;
+  }
+  main article figure.videoplayer .mejs-video.mejs-container-fullscreen {
+    width: 100% !important;
+    max-height: 100% !important;
+    height :100%;
+  }
+    main nav[role="navigation"] {
+    width: 100%;
+    //position: absolute;
+    //left: -160px;
+    form#dropdown_menu {
+      width: 100%;
+    }
+    ul[role="menubar"] li[role="menuitem"] {
+      > .prev-next.prev {
+        left:-50px;
+      }
+      > .prev-next.next {
+        right: -50px;
+      } 
+    }
+  }
+  aside {
+    width: 360px;
+    //border: 1px solid #555;
+    float: right;
+    @include border-radius(3px);
+  }
+  #playlist {
+    
+    z-index: 10;
+    @include inline-block-list;
+    li {
+      margin: 0 0 .5em 0;
+      width: 358px; 
+      padding:.25em;
+      background: #222;
+      font-size: 1em; 
+      @include border-radius(3px); 
+      &.selected, &.selected:hover {
+        background: #444;
+        @include border-radius(3px);
+        a {
+          color: #fff;
+        }
+      }
+      &:hover {
+        background: #333;
+        text-decoration: none;
+        @include border-radius(3px);
+      }
+      > a {
+        color: #ccc;
+        text-decoration: none;
+        vertical-align: top;
+        word-wrap: normal;
+        &:hover {
+          color: #eee;
+          text-decoration: underline;
+        }
+        img {
+          width: 136px;
+          margin: 0 .5em 0 0;
+          float: left;
+        }
+      }
+      span {
+        display: block;
+        color: #aaa;
+        width: 184px;
+        word-wrap: normal;
+        overflow: hidden;
+        white-space: normal;
+        font-size: .8em;
+        line-height: 1.33em;
+        padding: 0 0 .5em 0;
+      }   
+    }
+  }
+} 

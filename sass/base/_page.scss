@@ -1,0 +1,54 @@
+//////////////////////////////
+// BASE: Page specific styles that aren't in Compass-Pattern-Primer 
+//////////////////////////////
+
+html {
+  background-color: none;
+}
+body {
+  background-color: #191919;
+  background-image: url(../images/background.jpg);
+  background-repeat: repeat;
+  background-position: 0 0;
+  border: none;
+  height:100%;
+} 
+main {
+  article {
+    margin: 1em auto;
+    position: relative;
+    h1 {
+      color: #eee;
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+    .videoplayer, .mejs-video {
+      margin: 0 auto;
+      max-width: 720px;
+      height: auto;
+      &.mejs-container-fullscreen {
+        max-width: 100%;
+        height: auto;
+      }
+      video {
+        max-width: 100%;
+        @include box-shadow(-20px 0px 40px rgba(0,0,0,0.75), 5px 5px 20px rgba(0,0,0,0.5));
+      }  
+    }
+    > img {
+      @include box-shadow(-20px 0px 40px rgba(0,0,0,0.75), 5px 5px 20px rgba(0,0,0,0.5));
+    }
+    ul {
+      @include no-bullets;
+      margin: 0 0 0;
+      padding: 0;
+      li {
+        font-size: 1.75em;
+        line-height: 1.5em;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+//////////////////////////////
+// MODULES: Styles that are layout independent 
+//////////////////////////////
+
+.player nav[role="navigation"] {
+  form#dropdown_menu {
+    width: 720px;
+    margin: .5em auto;
+    text-align: right;
+    > select {
+      //margin: .5em .25em .25em .5em;
+      padding: .25em 1em .25em .25em;
+      font-size: 1.1em;
+      background-color: #aaa;
+      background-image: -webkit-linear-gradient(#ffffff, rgba(255, 255, 255, 0.5) 35%, transparent), url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+      background-image: -moz-linear-gradient(#ffffff, rgba(255, 255, 255, 0.5) 35%, transparent), url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+      background-image: linear-gradient(#ffffff, rgba(255, 255, 255, 0.5) 35%, transparent), url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+      background-repeat: no-repeat;
+      background-position: right center;
+      border: none;
+      color: #111;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+    }
+  }
+}
+    

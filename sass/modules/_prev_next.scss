@@ -1,0 +1,55 @@
+//////////////////////////////
+// MODULES: Styles that are layout independent 
+//////////////////////////////
+
+.player nav[role="navigation"] {
+  position: relative;
+  margin: 0 auto;
+  //width: 1020px;
+  width: 850px;
+  ul[role="menubar"] {
+    @include horizontal-list;
+    li[role="menuitem"] > .prev-next {
+      position: absolute;
+      top:60px;
+      z-index: 100; 
+      text-indent: 0;
+      font-size: 6em;
+      color: #bbb;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      .hidden {
+        @extend %element-invisible;
+      }
+      &.next {
+        right: 0;
+        //right: 40px;
+        & a:after, & .hidden:after {
+          content: '\20\203A';
+        }
+      }
+      &.prev {
+        left: 0;
+        //left: -20px;
+        text-align: left;
+        & a:before, &:empty:before {
+          content: '\2039\20';
+        }
+      }
+      &.last {
+        color: #555;
+      }
+      a {
+        color: #bbb;
+        text-decoration: none;
+        height: 400px;
+        width:40px;
+        line-height:4.5em;
+        border: 1px transparent solid;
+        display: block;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

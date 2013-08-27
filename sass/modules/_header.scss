@@ -1,0 +1,21 @@
+//////////////////////////////
+// MODULES: Styles that are layout independent 
+//////////////////////////////
+
+header {
+  width: 720px;
+  margin:0.67em auto;
+  h1 {
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  }
+  h2 a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: .875em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    &:hover {
+      color: #ccc; 
+    }
+  }
+}   

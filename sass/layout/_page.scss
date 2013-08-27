@@ -1,0 +1,23 @@
+//////////////////////////////
+// LAYOUT: Layout dependent css and media queries only 
+//////////////////////////////
+
+@include respond-to-ie('large') {
+  .videoplayer {
+    width: 720px;
+    video {
+    }  
+  }
+}
+@include respond-to-ie('small') {
+  .videoplayer {
+    width: 480px;
+    video {
+      max-width: 100%;
+    }  
+  }
+} 
+
+
+
+  

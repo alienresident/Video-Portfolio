@@ -1,0 +1,19 @@
+//////////////////////////////
+// MODULES: Styles that are layout independent 
+//////////////////////////////
+
+footer {
+  padding: 1em 0;
+  clear: both;
+  color: #ddd;
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: .75em;
+  color: #999;
+  a {
+   color: #aaa; 
+  }
+  .playlist & {
+    max-width: 1120px;
+  } 
+}   
