@@ -73,15 +73,18 @@ $file_offset_end = -3; // remove the last 'n' characters before file extension i
 $body_classes = "player";
 
 /**
- * What codecs and mediaquries are to be used with certain filenames: i.e '-sd' = (Standard Definition), 'avc1.64001E, mp4a.40.2' h264 high profile, aac audio, 'all and (max-width: 854px).
+ * Video sources, codecs, and media queries.
+ *
+ * What codecs and mediaquries are to be used with certain filenames: i.e '-sd' = (Standard Definition), 'avc1.64001E, mp4a.40.2' h264 high profile, aac audio, 'all and (max-width: 854px). Media Queries should only be used if $responsive = true;
  */
 $video_sources = array();
 $video_sources[] = array('filename_stem' => '-sd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
 $video_sources[] = array('filename_stem' => '-sm', 'codec' =>'avc1.42E01E, mp4a.40.2', 'media' =>'all and (max-width: 512px)'); 
 $video_sources[] = array('filename_stem' => '-wb', 'codec' =>'vp8, vorbis', 'media' =>'');
+
 /**
- * What h264 file to use a flash fallback
- */ 
+ * Which h264 file to use a flash fallback
+ */
 $flash_fallback_source = '-sd';
 
 /**
