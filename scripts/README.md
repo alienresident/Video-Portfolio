@@ -23,11 +23,11 @@ or a bunch of videos in the same folder using:
 Here's a list of the current resolutions. They are targeted for a 16:9 HD source.
 I can make this script a little smarter if there's a need-open an issue or send me an email. 
 
-	 _Current Resolutions_____________________    
+	 _Current Resolutions_____________________
 	| name | size     | video | audio | ratio |
 	| sm   | 512x288  | 550k  | 64k   | 16:9  |
 	| sd   | 768x432  | 1250k | 96k   | 16:9  |
-	| hd   | 1280x720 | 2750k | 128k  | 16:9  |
+	| hd   | 1280x720 | 2500k | 128k  | 16:9  |
 	| wb   | 768x432  | 1250k | 96k   | 16:9  |
 	 -----------------------------------------
 
