@@ -1,7 +1,7 @@
 # Using the CLI script to encode videos
 
 ##ffmpeg settings 
-You can use use the `encode_video.sh` shell script to encode your videos. It comes with presets for h264: "hd", "sd", and "sm"; and a preset for webm: "wm" video. The "hd" and "sd" use the h264 high profile (for desktop and newer smartphones). The "sm" version uses the h264 baseline profile for older phones and iPods. The webm currently uses the HD size.
+You can use use the `encode_video.sh` shell script to encode your videos. It comes with presets for h264: "-hd", "-sd", and "-sm"; and a preset for webm: "-wm" video. The "-hd" and "-sd" use the h264 high profile (for desktop and newer smartphones). The "-sm" version uses the h264 baseline profile for older phones and iPods. The webm currently uses the HD size.
 
 ### Installing ffmpeg using Homebrew on Mac OS X
 
@@ -28,7 +28,7 @@ I can make this script a little smarter if there's a need-open an issue or send 
 	| sm   | 512x288  | 550k  | 64k   | 16:9  |
 	| sd   | 768x432  | 1250k | 96k   | 16:9  |
 	| hd   | 1280x720 | 2500k | 128k  | 16:9  |
-	| wb   | 768x432  | 1250k | 96k   | 16:9  |
+	| wb   | 1280x720 | 2500k | 128k  | 16:9  |
 	 -----------------------------------------
 
 
