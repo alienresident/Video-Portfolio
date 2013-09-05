@@ -1,5 +1,5 @@
  
-## NOTE: Documentation is in Progress!
+## NOTE: Documentation is still in Progress!
 
 # Simple Video Portfolio
 
@@ -7,7 +7,40 @@ Simple Video Portfolio is a HTML 5 video player to showcase video based portfoli
 
 ## Simple Video Portfolio [SVP] 
 
-* It creates a video player that works in: Chrome, Safari, iOs (newer and older iPhones and iPads), Firefox, Opera, IE9 & IE10 and even IE8 (using a flash fallback).
-* You can easily add more videos without updating code. Simply upload the videos to your site.
+* It creates a HTML 5 video player that works in: Chrome, Safari, iOs (newer and older iPhones and iPads), Firefox, Opera, IE9 & IE10 and even IE8 (using a flash fallback).
+* You can easily add more videos without updating html. Simply upload the videos to your site.
 * It doesn't require a CMS that needs to be updated and maintained.
 
+## How it Works
+The video player script looks for videos in a directory ()or directories) and programmatically adds them to the player.
+
+	Directory Structure
+	player.php
+	videos/
+		01_Artwork/
+		O2_Motion_Graphics/
+		
+In this example `player.php` is looking in the `videos` folder and sees 2 subfolders: `01_Artwork` and `O2_Motion_Graphics`. It will look for videos in these folders and create a player. Since there are 2 subfolders in this example it will create navigation options so you can view the contents of both folders. Navigation options can be specified here. [TK] 
+
+### Adding videos
+You can add just one version of your video or for better compatibility to add multiple versions. It's recommended to add; a h264 video (high profile) for desktops, newer phones and tablets, and for the flash fallback; a webm video for Firefox and Opera browsers; and a h264 video (baseline profile) for older phones, tablets, and iPods.
+
+You can either add as many different videos as you like to the same folder or add them to different folders. If there are different video titles in the folder they video player will create a drop down or a playlist so you can navigate between the videos. In this example `01_Artwork` has four 'flavors' of the same video (artwork_1). In `O2_Motion_Graphics` we have four 'flavors' of two different videos (Trailer_1 and Promo_1).
+
+	videos/
+		01_Artwork/
+			artwork_1-hd.mp4
+			artwork_1-sd.mp4
+			artwork_1-sm.mp4
+			artwork_1-wb.webm
+		O2_Motion_Graphics/
+			Trailer_1-hd.mp4
+			Trailer_1-sd.mp4
+			Trailer_1-sm.mp4
+			Trailer_1-wb.webm
+			Promo_1-hd.mp4
+			Promo_1-sd.mp4
+			Promo_1-sm.mp4
+			Promo_1-wb.webm
+
+## Naming Conventions
