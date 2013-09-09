@@ -25,8 +25,8 @@ $responsive = true;
 $mediaelementplayer = true;
 $dropdown = true;
 $prev_next = false;
-$prev_text = "<span class=\"hidden\">Previous</span>";
-$next_text = "<span class=\"hidden\">Next</span>";
+$prev_text = '<span class="hidden">Previous</span>';
+$next_text = '<span class="hidden">Next</span>';
 $playlist = true;
 $playlist_descriptions = true;
 
@@ -35,8 +35,8 @@ $playlist_descriptions = true;
  */
 $html5_video = true;
 $poster_image = true;
+$video_tag_attributes = 'controls="controls" autoplay';
 $flash_fallback = true;
-$video_tag_attributes = "controls=\"controls\" autoplay";
 
 /**
  * content
@@ -44,9 +44,9 @@ $video_tag_attributes = "controls=\"controls\" autoplay";
 $header = true;
 $h1 = false;
 $h2 = true;
-$heading2 = '<a href="player.php" title="Home" rel="home">Simple Video Portfolio</a>';  
+$heading2 = '<a href="'. $root_dir. 'player.php" title="Home" rel="home">Simple Video Portfolio</a>';
 $footer = true;
-$footer_text = '<a href="http://www.alienresident.net">Mark Reilly</a>';
+$footer_text = '<a href="https://github.com/alienresident/Simple-Video-Portfolio">Simple Video Portfolio</a> (Github)';
 
 /**
  * Prettify file and directories, and add playlist descriptions
@@ -78,7 +78,8 @@ $body_classes = "player";
  * What codecs and mediaquries are to be used with certain filenames: i.e '-sd' = (Standard Definition), 'avc1.64001E, mp4a.40.2' h264 high profile, aac audio, 'all and (max-width: 854px). Media Queries should only be used if $responsive = true;
  */
 $video_sources = array();
-$video_sources[] = array('filename_stem' => '-sd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
+$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
+$video_sources[] = array('filename_stem' => '-sd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'all and (max-width: 800px)');
 $video_sources[] = array('filename_stem' => '-sm', 'codec' =>'avc1.42E01E, mp4a.40.2', 'media' =>'all and (max-width: 512px)'); 
 $video_sources[] = array('filename_stem' => '-wb', 'codec' =>'vp8, vorbis', 'media' =>'');
 
