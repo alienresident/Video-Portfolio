@@ -152,4 +152,7 @@ What codecs and mediaquries are to be used with certain filenames: i.e '-sd' = (
 
 #### Which h264 file to use a flash fallback
 	$flash_fallback_source = '-sd';	
-	
+
+
+### Useful Links for HTML 5 Video
+[The State Of HTML5 Video](http://www.longtailvideo.com/html5/)
