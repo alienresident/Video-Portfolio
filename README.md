@@ -64,7 +64,7 @@ If you change the naming scheme be sure to change the filename stem here to.
 	
 
 ### Escaping or Substituting Characters in File and Folder Names
-In the `names.txt` you can escape or substitute characters. As it's can be problematic to have spaces in filenames underscores `_` are convert to HTML non-breaking spaces `&nbsp;`. The pipe `\` acts as a divider and you can use regular expressions here too.
+In the `names.txt` you can escape or substitute characters. As it's can be problematic to have spaces in filenames underscores `_` are convert to HTML non-breaking spaces `&nbsp;`. The pipe `|` acts as a divider between what to look for and what to replace it with. You can use [regular expressions](http://www.php.net/manual/en/reference.pcre.pattern.syntax.php) on the first half if you wish.
   
 	/_/|&nbsp;
 	
