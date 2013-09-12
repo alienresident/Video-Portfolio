@@ -35,7 +35,7 @@ $playlist_descriptions = true;
  */
 $html5_video = true;
 $poster_image = true;
-$video_tag_attributes = 'controls="controls" autoplay';
+$video_tag_attributes = 'controls autoplay';
 $flash_fallback = true;
 
 /**
@@ -63,8 +63,8 @@ $offline = false; // for development only: use a local copy of jQuery rather tha
 /**
  * filename variables: ignore 'n' characters from filenames
  */
-$dir_offset_start = 3; // remove the first 'n' characters i.e. 3 = '01_' from O1_Reel 
-$file_offset_start = 0; // remove the first 'n' characters
+$dir_offset_start = 3; // remove the first 'n' characters from the directory name i.e. 3 = '01_' from O1_Artwork
+$file_offset_start = 0; // remove the first 'n' characters from the filename
 $file_offset_end = -3; // remove the last 'n' characters before file extension i.e. -3 = '-sd' from filename-sd.mp4
 
 /**

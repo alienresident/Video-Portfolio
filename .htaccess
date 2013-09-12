@@ -1,3 +1,5 @@
 AddType video/mp4 .mp4
 AddType video/ogg .ogg
 AddType video/webm .webm
+# http://camendesign.com/code/video_for_everybody (see number 8) make sure host isn't gzipping video files — can't seek otherwise
+SetEnvIfNoCase Request_URI \.(og[gv]|mp4|m4v|webm)$ no-gzip dont-vary
