@@ -1,11 +1,11 @@
  
 ## NOTE: Documentation is still in Progress!
 
-# Simple Video Portfolio
+# Video Portfolio
 
-Simple Video Portfolio is a HTML 5 video player to showcase video based portfolios. It's set up to deliver the a great video experience no matter what browser or device you have.    
+Video Portfolio is a simple HTML 5 video player to showcase video based portfolios. It's set up to deliver the a great video experience no matter what browser or device you have.    
 
-## Simple Video Portfolio [SVP] player
+## Video Portfolio player
 
 * It creates a HTML 5 video player that works in: Chrome, Safari, iOs (newer and older iPhones and iPads), Firefox, Opera, IE9 & IE10 and even IE8 (using a flash fallback).
 * You can easily add more videos without updating html. Simply upload the videos to your site.
@@ -93,10 +93,16 @@ In `player.php` you have a long list of configuration options. They are broken d
 	$root_dir = ''; 
  
 #### page elements
-Set the name of the website and the style sheet. Choose whether or not to be a responsive site. Choose whether to use `mediaelementjs` to normalize the html 5 and flash player.
 
-	$websitename = 'Simple Video Portfolio';
+* Set the name of the website and the style sheet.   
+* Choose whether or not to be a responsive site.   
+* Choose whether to use `mediaelementjs` to normalize the html 5 and flash player.
+
+&nbsp;
+	
+	$websitename = 'Video Portfolio';
 	$stylesheet = $root_dir . 'css/global.css';
+
 	$responsive = true;
 	$mediaelementplayer = true;
 
@@ -121,9 +127,9 @@ Sets the HTML 5 video tag and it's attributes. See the full list of (video tag a
 	$header = true;
 	$h1 = true;
 	$h2 = true;
-	$heading2 = '<a href="'. $root_dir. 'player.php" title="Home" rel="home">Simple Video Portfolio</a>';
+	$heading2 = '<a href="'. $root_dir. 'player.php" title="Home" rel="home">Video Portfolio</a>';
 	$footer = true;
-	$footer_text = '<a href="https://github.com/alienresident/Simple-Video-Portfolio">Simple Video Portfolio</a> (Github)';
+	$footer_text = '<a href="https://github.com/alienresident/Video-Portfolio">Video Portfolio</a> (Github)';
 
 #### Prettify file and directories, and add playlist descriptions
 	$names_file = 'names.txt';
