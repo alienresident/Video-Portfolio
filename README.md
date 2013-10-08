@@ -1,5 +1,5 @@
  
-## NOTE: Documentation is still in Progress!
+### NOTE: Documentation is still in Progress!
 
 # Video Portfolio
 
@@ -25,8 +25,8 @@ __Directory Structure:__
 		
 In this example `player.php` is looking in the `videos` folder and sees 2 subfolders: `01_Artwork` and `O2_Promos`. It will look for videos in these folders and create a player. Since there are 2 subfolders in this example it will create navigation options so you can view the contents of both folders. Navigation options can be specified here. [TK] 
 
-### Adding videos
-You can add just one version of your video or for better compatibility to add multiple versions. It's recommended to add; a h264 video (high profile) for desktops, newer phones and tablets, and for the flash fallback; a webm video for Firefox and Opera browsers; and a h264 video (baseline profile) for older phones, tablets, and iPods.
+### How to Add Videos
+You can add just one version of your video or for better compatibility add multiple versions. It's recommended to add; a h264 video (high profile) for desktops, newer phones and tablets, and for the flash fallback; a webm video for Firefox and Opera browsers; and a h264 video (baseline profile) for older phones, tablets, and iPods.
 
 You can either add as many different videos as you like to the same folder or add them to different folders. If there are different video titles in the folder they video player will create a drop down or a playlist so you can navigate between the videos. In this example `01_Artwork` has four 'flavors' of the same video (artwork_1). In `O2_Promos` we have four 'flavors' of two different videos (Trailer_1 and Promo_1).
 
@@ -47,7 +47,11 @@ You can either add as many different videos as you like to the same folder or ad
 			Promo_1-wb.webm
 
 
-## Naming Conventions
+
+## Advanced Configuration Options
+
+### Naming Conventions
+
 
 ### Folder Names
 The sub folders by default will be in alphabetical order. Numbering the sub folders will make them appear in a particular order i.e. `01_Artwork`, `O2_Promos`, `03_Motion_Graphics`. However, we usually don't want to display these ordering numbers in the interface. In the player.php configuration settings, we can tell the script to ignore the first _n_ characters (the default is 3). The folders will be then listed as `Artwork`, `Promos`, `Motion Graphics`. If you want to use a different naming shame you can change the numbers of characters to remove. Look for `$dir_offset_start` in the player config file.

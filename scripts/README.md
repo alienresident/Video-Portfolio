@@ -23,7 +23,7 @@ or a bunch of videos in the same folder using:
 
 ### Current Resolutions
 
-Here's a list of the current resolutions. They are targeted for a 16:9 HD source.  
+Here's a list of the current resolutions. This would be from a 16:9 HD source.  
 
 	 _Current Resolutions________________________________________
 	| name | size     | video | audio | ratio | codec | profile  |
