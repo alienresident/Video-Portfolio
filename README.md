@@ -3,14 +3,14 @@
 
 # Video Portfolio
 
-Video Portfolio is a simple HTML 5 video player to showcase video based portfolios. It's set up to deliver the a great video experience no matter what browser or device you have. 
+Video Portfolio is a simple HTML 5 video player to showcase video-based portfolios. It's set up to deliver a great video experience no matter what browser or device your viewers have. 
 
-The video player is designed to be flexible so it has a lot of options. However you can use the default setup and get started right away. Once it's set up all you need to do is upload your videos.      
+The video player is designed to be flexible, so while it has a lot of options, you can use the default setup and get started right away. Once it's set up, all you need to do is upload your videos.      
 
 ## What it does
 
 * It creates a HTML 5 video player that works in all major browsers: Chrome, Safari, iOs (newer and older iPhones and iPads), Firefox, Opera, IE9 & IE10 and even IE8 (using a flash fallback).
-* You can easily add more videos without updating the HTML. Simply upload the videos to your site.
+* You can easily add more videos without updating any HTML. Simply upload the videos to your site (via ftp).
 * It doesn't require a CMS that needs to be updated and maintained.
 
 ## How it Works
@@ -51,13 +51,13 @@ You can either add as many different videos as you like to the same folder or ad
 ## Advanced Configuration Options
 
 ### Naming Conventions
-
+We want to have pretty (legible, human readable) names for our directories and videos without the hassle of updating HTML. So we have to go through a few tricky steps to do this. Essentially, we're converting machine-friendly text into human-friendly text (i.e. manipulating strings). We got some rules to follow _aka_ naming conventions to get this to work properly.
 
 ### Folder Names
-The sub folders by default will be in alphabetical order. Numbering the sub folders will make them appear in a particular order i.e. `01_Artwork`, `O2_Promos`, `03_Motion_Graphics`. However, we usually don't want to display these ordering numbers in the interface. In the player.php configuration settings, we can tell the script to ignore the first _n_ characters (the default is 3). The folders will be then listed as `Artwork`, `Promos`, `Motion Graphics`. If you want to use a different naming shame you can change the numbers of characters to remove. Look for `$dir_offset_start` in the player config file.
+The sub folders by default will be in alphabetical order. Numbering the sub folders will make them appear in a particular order i.e. `01_Artwork`, `O2_Promos`, `03_Motion_Graphics`. However, we usually don't want to display these ordering numbers in the interface. In the player.php configuration settings, we can tell the script to ignore the first _n_ characters (the default is 3). The folders will be then listed as `Artwork`, `Promos`, `Motion Graphics`. If you want to use a different naming scheme you can change the numbers of characters to remove. Look for [$dir_offset_start](#filename-variables) in the player config file.
 
 ### File names
-The script compares the file names of each video to see if they are different sources of the same video i.e. `artwork_1-hd.mp4` and `artwork_1-sd.mp4` By default it will remove the last _n_ characters (the default is 3) i.e. `-hd` and `-sd` and compares the remaining name i.e. `artwork_1`. 
+The script compares the file names of each video to see if they are different versions of the same video i.e. `artwork_1-hd.mp4` and `artwork_1-sd.mp4` It  removes the last _n_ characters (the default is 3) i.e. `-hd` and `-sd` and compares the remaining name i.e. `artwork_1`. 
 
 If you want to use a different naming scheme you can change the number of characters to remove. Look for `$file_offset_end` variable in the player config file (this should be a negative number). Similarly with folder names you can also control the order of the videos by numbering them and using the `$file_offset_start`variable to remove _n_ characters (this should be a positive number). 
 
@@ -158,7 +158,7 @@ Sets the HTML 5 video tag and it's attributes. See the full list of (video tag a
 
 If your developing locally with no internet connection set this to true. Otherwise you can ignore this.
    
-#### filename variables: ignore 'n' characters from filenames
+#### filename variables
 	$dir_offset_start = 3; // remove the first 'n' characters from the directory name i.e. 3 = '01_' from O1_Artwork
 	$file_offset_start = 0; // remove the first 'n' characters from the filename
 	$file_offset_end = -3; // remove the last 'n' characters before file extension i.e. -3 will remove '-sd' from filename-sd.mp4
