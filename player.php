@@ -44,12 +44,12 @@ $flash_fallback = true;
 $header = true;
 $h1 = false;
 $h2 = true;
-$heading2 = '<a href="'. $root_dir. 'player.php" title="Home" rel="home">Simple Video Portfolio</a>';
+$heading2 = '<a href="'. $root_dir .  $playerurl .'" title="Home" rel="home">Video Portfolio</a>';
 $footer = true;
-$footer_text = '<a href="https://github.com/alienresident/Simple-Video-Portfolio">Simple Video Portfolio</a> (Github)';
+$footer_text = '<a href="https://github.com/alienresident/Video-Portfolio">Video Portfolio</a> (Github)';
 
 /**
- * Prettify file and directories, and add playlist descriptions
+ * Prettify file and directories names, and add playlist descriptions
  */
 $names_file = 'names.txt';
 $playlist_descriptions_file = 'descriptions.txt';
@@ -65,7 +65,7 @@ $offline = false; // for development only: use a local copy of jQuery rather tha
  */
 $dir_offset_start = 3; // remove the first 'n' characters from the directory name i.e. 3 = '01_' from O1_Artwork
 $file_offset_start = 0; // remove the first 'n' characters from the filename
-$file_offset_end = -3; // remove the last 'n' characters before file extension i.e. -3 = '-sd' from filename-sd.mp4
+$file_offset_end = -3; // remove the last 'n' characters before file extension i.e. -3 will remove '-sd' from filename-sd.mp4
 
 /**
  * CSS body classes
@@ -78,7 +78,7 @@ $body_classes = "player";
  * What codecs and mediaquries are to be used with certain filenames: i.e '-sd' = (Standard Definition), 'avc1.64001E, mp4a.40.2' h264 high profile, aac audio, 'all and (max-width: 854px). Media Queries should only be used if $responsive = true;
  */
 $video_sources = array();
-$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
+$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'all and (min-width: 1280px)');
 $video_sources[] = array('filename_stem' => '-sd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'all and (max-width: 800px)');
 $video_sources[] = array('filename_stem' => '-sm', 'codec' =>'avc1.42E01E, mp4a.40.2', 'media' =>'all and (max-width: 512px)'); 
 $video_sources[] = array('filename_stem' => '-wb', 'codec' =>'vp8, vorbis', 'media' =>'');

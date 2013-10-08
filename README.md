@@ -3,18 +3,21 @@
 
 # Video Portfolio
 
-Video Portfolio is a simple HTML 5 video player to showcase video based portfolios. It's set up to deliver the a great video experience no matter what browser or device you have.    
+Video Portfolio is a simple HTML 5 video player to showcase video based portfolios. It's set up to deliver the a great video experience no matter what browser or device you have. 
 
-## Video Portfolio player
+The video player is designed to be flexible so it has a lot of options. However you can use the default setup and get started right away. Once it's set up all you need to do is upload your videos.      
 
-* It creates a HTML 5 video player that works in: Chrome, Safari, iOs (newer and older iPhones and iPads), Firefox, Opera, IE9 & IE10 and even IE8 (using a flash fallback).
-* You can easily add more videos without updating html. Simply upload the videos to your site.
+## What it does
+
+* It creates a HTML 5 video player that works in all major browsers: Chrome, Safari, iOs (newer and older iPhones and iPads), Firefox, Opera, IE9 & IE10 and even IE8 (using a flash fallback).
+* You can easily add more videos without updating the HTML. Simply upload the videos to your site.
 * It doesn't require a CMS that needs to be updated and maintained.
 
 ## How it Works
 The video player script looks for a folder (i.e. videos) in a directory (or directories) and adds them to the player.
 
-	Directory Structure
+__Directory Structure:__
+
 	player.php
 	videos/
 		01_Artwork/
@@ -43,10 +46,11 @@ You can either add as many different videos as you like to the same folder or ad
 			Promo_1-sm.mp4
 			Promo_1-wb.webm
 
+
 ## Naming Conventions
 
 ### Folder Names
-The sub folders by default will be in alphabetical order. Numbering the sub folders will make them appear in a particular order i.e. `01_Artwork`, `O2_Promos`, `03_Motion_Graphics`. However, we usually don't want to display these numbers in the interface. In the player.php configuration settings, we can tell the script to ignore the first _n_ characters (the default is 3). The folders will be then listed as `Artwork`, `Promos`, `Motion Graphics`. If you want to use a different naming shame you can change the numbers of characters to remove. Look for `$dir_offset_start` in the player config file.
+The sub folders by default will be in alphabetical order. Numbering the sub folders will make them appear in a particular order i.e. `01_Artwork`, `O2_Promos`, `03_Motion_Graphics`. However, we usually don't want to display these ordering numbers in the interface. In the player.php configuration settings, we can tell the script to ignore the first _n_ characters (the default is 3). The folders will be then listed as `Artwork`, `Promos`, `Motion Graphics`. If you want to use a different naming shame you can change the numbers of characters to remove. Look for `$dir_offset_start` in the player config file.
 
 ### File names
 The script compares the file names of each video to see if they are different sources of the same video i.e. `artwork_1-hd.mp4` and `artwork_1-sd.mp4` By default it will remove the last _n_ characters (the default is 3) i.e. `-hd` and `-sd` and compares the remaining name i.e. `artwork_1`. 
@@ -54,13 +58,19 @@ The script compares the file names of each video to see if they are different so
 If you want to use a different naming scheme you can change the number of characters to remove. Look for `$file_offset_end` variable in the player config file (this should be a negative number). Similarly with folder names you can also control the order of the videos by numbering them and using the `$file_offset_start`variable to remove _n_ characters (this should be a positive number). 
 
 #### Video sources, codecs, and media queries.
-The `$video_sources` array tell the script what codec the video is encoded in and if it's responsive what size the video is. This values are the ones from the encoding script.
+The `$video_sources` array tells the script what codec the video is encoded with. If the site is responsive it tells what the dimensions of the video are. These values are the ones from the encoding script.
 
 	$video_sources = array();
 	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
 	[…]
+
+Responsive example: 
+ 
+	$video_sources = array();
+	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'all and (min-width: 1280px)');
+	[…]
 	
-If you change the naming scheme be sure to change the filename stem here to. 
+Note: If you have changed the naming scheme be sure to change the filename stem here too. 
 	
 
 ### Escaping or Substituting Characters in File and Folder Names
@@ -86,12 +96,15 @@ In `player.php` you have a long list of configuration options. They are broken d
 	$w = 768;
 	$h = 432;
 
+The standard dimensions of the player. Not used if `$responsive` is set to true
 
 #### server config
 	$dir = 'video';
 	$playerurl = 'player.php';
 	$root_dir = ''; 
- 
+
+Where the videos are. If you want to change `player.php` to something else i.e. `videos.php` be sure to update the `$playerurl` here. If your player is in a subdirectory add the correct relative path to root dir where the css, php, and javascript files are i.e. If you need to go up one level then `$root_dir = '../';`
+   
 #### page elements
 
 * Set the name of the website and the style sheet.   
@@ -127,22 +140,24 @@ Sets the HTML 5 video tag and it's attributes. See the full list of (video tag a
 	$header = true;
 	$h1 = true;
 	$h2 = true;
-	$heading2 = '<a href="'. $root_dir. 'player.php" title="Home" rel="home">Video Portfolio</a>';
+	$heading2 = '<a href="'. $root_dir .  $playerurl .'" title="Home" rel="home">Video Portfolio</a>';
 	$footer = true;
 	$footer_text = '<a href="https://github.com/alienresident/Video-Portfolio">Video Portfolio</a> (Github)';
 
-#### Prettify file and directories, and add playlist descriptions
+#### Prettify file and directories names, and add playlist descriptions
 	$names_file = 'names.txt';
 	$playlist_descriptions_file = 'descriptions.txt';
 
 #### Advanced Player configurable variables
  
 	$offline = false; // for development only: use a local copy of jQuery rather than the Google CDN
+
+If your developing locally with no internet connection set this to true. Otherwise you can ignore this.
    
 #### filename variables: ignore 'n' characters from filenames
 	$dir_offset_start = 3; // remove the first 'n' characters from the directory name i.e. 3 = '01_' from O1_Artwork
 	$file_offset_start = 0; // remove the first 'n' characters from the filename
-	$file_offset_end = -3; // remove the last 'n' characters before file extension i.e. -3 = '-sd' from filename-sd.mp4
+	$file_offset_end = -3; // remove the last 'n' characters before file extension i.e. -3 will remove '-sd' from filename-sd.mp4
 
 #### CSS body classes
 	$body_classes = "player";
@@ -151,7 +166,7 @@ Sets the HTML 5 video tag and it's attributes. See the full list of (video tag a
 What codecs and mediaquries are to be used with certain filenames: i.e '-sd' = (Standard Definition), 'avc1.64001E, mp4a.40.2' h264 high profile, aac audio, 'all and (max-width: 854px). Media Queries should only be used if `$responsive = true`;
 
 	$video_sources = array();
-	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
+	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'all and (min-width: 1280px)');
 	$video_sources[] = array('filename_stem' => '-sd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
 	$video_sources[] = array('filename_stem' => '-sm', 'codec' =>'avc1.42E01E, mp4a.40.2', 'media' =>'all and (max-width: 512px)'); 
 	$video_sources[] = array('filename_stem' => '-wb', 'codec' =>'vp8, vorbis', 'media' =>'');
