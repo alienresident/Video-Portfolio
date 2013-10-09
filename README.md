@@ -14,23 +14,23 @@ The video player is designed to be flexible, so while it has a lot of options, y
 * It doesn't require a CMS that needs to be updated and maintained.
 
 ## How it Works
-The video player script looks for a folder (i.e. videos) in a directory (or directories) and adds them to the player.
+The video player script looks for a folder (i.e. video) in a directory (or directories) and adds them to the player.
 
 __Directory Structure:__
 
 	player.php
-	videos/
+	video/
 		01_Artwork/
 		O2_Promos/
 		
-In this example `player.php` is looking in the `videos` folder and sees 2 subfolders: `01_Artwork` and `O2_Promos`. It will look for videos in these folders and create a player. Since there are 2 subfolders in this example it will create navigation options so you can view the contents of both folders. Navigation options can be specified [here](#navigation-options) 
+In this example `player.php` is looking in the `video` folder and sees 2 subfolders: `01_Artwork` and `O2_Promos`. It will look for videos in these folders and create a player. Since there are 2 subfolders in this example it will create navigation options so you can view the contents of both folders. Navigation options can be specified under [navigation options](#navigation-options) in the player config. 
 
 ### How to Add Videos
 You can add just one version of your video or for better compatibility add multiple versions. It's recommended to add; a h264 video (high profile) for desktops, newer phones and tablets, and for the flash fallback; a webm video for Firefox and Opera browsers; and a h264 video (baseline profile) for older phones, tablets, and iPods.
 
 You can either add as many different videos as you like to the same folder or add them to different folders. If there are different video titles in the folder they video player will create a drop down or a playlist so you can navigate between the videos. In this example `01_Artwork` has four 'flavors' of the same video (artwork_1). In `O2_Promos` we have four 'flavors' of two different videos (Trailer_1 and Promo_1).
 
-	videos/
+	video/
 		01_Artwork/
 			artwork_1-hd.mp4
 			artwork_1-sd.mp4
@@ -101,7 +101,8 @@ In `player.php` you have a long list of configuration options. They are broken d
 	$playerurl = 'player.php';
 	$root_dir = ''; 
 
-Where the videos are. If you want to change `player.php` to something else i.e. `videos.php` be sure to update the `$playerurl` here. If your player is in a subdirectory add the correct relative path to root dir where the css, php, and javascript files are i.e. If you need to go up one level then `$root_dir = '../';`
+__Note:__ Which folder contains the videos. If you want to rename `player.php` to something else i.e. `videos.php` be sure to update the `$playerurl` here. 
+If your player is in a subdirectory add the correct relative path to root dir where the css, php, and javascript files are i.e. If you need to go up one level then `$root_dir = '../';`
    
 #### Page Elements
 	
@@ -148,14 +149,16 @@ Sets the HTML 5 video tag and it's attributes (full list of [video tag attribute
 	$footer_text = '<a href="https://github.com/alienresident/Video-Portfolio">Video Portfolio</a> (Github)';
 
 #### Prettify Names and Add Playlist Descriptions
-	$names_file = 'names.txt';
-	$playlist_descriptions_file = 'descriptions.txt';
+	$names_file = $root_dir . 'names.txt';
+	$playlist_descriptions_file = $root_dir . 'descriptions.txt';
+
+Detailed description of these files and how they work see the section [Escaping or Substituting Characters in File and Folder Names](#escaping-or-substituting-characters-in-file-and-folder-names) above.
 
 ### Advanced Configurable Variables
  
 	$offline = false; // for development only: use a local copy of jQuery rather than the Google CDN
 
-If your developing locally with no internet connection set this to true. Otherwise you can ignore this.
+If your developing locally with no internet connection set this to true otherwise you can ignore this.
    
 #### Filename variables
 	$dir_offset_start = 3; // remove the first 'n' characters from the directory name i.e. 3 = '01_' from O1_Artwork
@@ -181,12 +184,13 @@ What codecs and media queries are to be used with certain filenames:
 * `avc1.64001E, mp4a.40.2` is h264 video using the high profile with AAC audio
 * `all and (min-width: 513px and max-width: 854px)`a media query that specifies a max-width and/or a min-width
 
-__Note:__ media queries should only be used if `$responsive = true`
+__Note:__ media queries should only be used if `$responsive = true`.
 
 #### Flash Fallback
 
-	$flash_fallback_source = '-hd';	
-Which h264 file to use a flash fallback   
+	$flash_fallback_source = '-hd';	  
+
+Which h264 file to use a flash fallback.   
 
 ### Useful Links for HTML 5 Video
 [The State Of HTML5 Video](http://www.longtailvideo.com/html5/)  
