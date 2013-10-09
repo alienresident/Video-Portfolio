@@ -41,6 +41,7 @@ Current Resolutions
 | hd   | 1280x720 | 2500k | 128k  | 16:9  | h264  | high     |
 | wb   | 1280x720 | 2500k | 128k  | 16:9  | VP8   | N/A      |
 
+| name	| size     | video | audio | ratio | codec | profile  |
 	 
 ### Feature Requests?
 I can make this script a little smarter if there's a need — open an issue or send me an email.
