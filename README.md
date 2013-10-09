@@ -54,15 +54,15 @@ You can either add as many different videos as you like to the same folder or ad
 We want to have pretty (legible, human readable) names for our directories and videos without the hassle of updating HTML. So we have to go through a few tricky steps to do this. Essentially, we're converting machine-friendly text into human-friendly text (i.e. manipulating strings). We got some rules to follow _aka_ naming conventions to get this to work properly.
 
 ### Folder Names
-The sub folders by default will be in alphabetical order. Numbering the sub folders will make them appear in a particular order i.e. `01_Artwork`, `O2_Promos`, `03_Motion_Graphics`. However, we usually don't want to display these ordering numbers in the interface. In the player.php configuration settings, we can tell the script to ignore the first _n_ characters (the default is 3). The folders will be then listed as `Artwork`, `Promos`, `Motion Graphics`. If you want to use a different naming scheme you can change the numbers of characters to remove. Look for [$dir_offset_start](#filename-variables) in the player config file.
+The sub folders by default will be in alphabetical order. Numbering the sub folders will make them appear in a particular order i.e. `01_Artwork`, `O2_Promos`, `03_Motion_Graphics`. However, we usually don't want to display these ordering numbers in the interface. In the player.php configuration settings, we can tell the script to ignore the first _n_ characters (the default is 3). The folders will be then listed as `Artwork`, `Promos`, `Motion Graphics`. If you want to use a different naming scheme you can change the numbers of characters to remove. See `$dir_offset_start` under [filename variables](#filename-variables) in the player config file.
 
 ### File names
 The script compares the file names of each video to see if they are different versions of the same video i.e. `artwork_1-hd.mp4` and `artwork_1-sd.mp4` It  removes the last _n_ characters (the default is 3) i.e. `-hd` and `-sd` and compares the remaining name i.e. `artwork_1`. 
 
-If you want to use a different naming scheme you can change the number of characters to remove. Look for `$file_offset_end` variable in the player config file (this should be a negative number). Similarly with folder names you can also control the order of the videos by numbering them and using the `$file_offset_start`variable to remove _n_ characters (this should be a positive number). 
+If you want to use a different naming scheme you can change the number of characters to remove. Look for `$file_offset_end` variable under [filename variables](#filename-variables) in the player config file (this should be a negative number). Similarly with folder names you can also control the order of the videos by numbering them and using the `$file_offset_start` variable under [filename variables](#filename-variables) to remove _n_ characters (this should be a positive number). 
 
 #### Video sources, codecs, and media queries.
-The `$video_sources` array tells the script what codec the video is encoded with. If the site is responsive it tells what the dimensions of the video are. These values are the ones from the encoding script.
+The `$video_sources` array under [video sources](#video-sources) in the player config tells the script what codec the video is encoded with. If the site is responsive it tells what the dimensions of the video are. These values are the ones from the encoding script.
 
 	$video_sources = array();
 	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
@@ -96,20 +96,20 @@ You can also change the name of the `descriptions.txt` to whatever you like by c
 ## Player Configuration Settings
 In `player.php` you have a long list of configuration options. They are broken down into sections that control different elements on the page.  
 
-#### movie dimensions
-	$w = 768;
-	$h = 432;
+#### Movie Dimensions
+	$w = 1280;
+	$h = 720;
 
 The standard dimensions of the player. Not used if `$responsive` is set to true
 
-#### server config
+#### Server Config 
 	$dir = 'video';
 	$playerurl = 'player.php';
 	$root_dir = ''; 
 
 Where the videos are. If you want to change `player.php` to something else i.e. `videos.php` be sure to update the `$playerurl` here. If your player is in a subdirectory add the correct relative path to root dir where the css, php, and javascript files are i.e. If you need to go up one level then `$root_dir = '../';`
    
-#### page elements
+#### Page Elements
 
 * Set the name of the website and the style sheet.   
 * Choose whether or not to be a responsive site.   
@@ -140,7 +140,7 @@ Sets the HTML 5 video tag and it's attributes. See the full list of (video tag a
 	$video_tag_attributes = 'controls autoplay';
 	$flash_fallback = true;
 
-#### content
+#### Content
 	$header = true;
 	$h1 = true;
 	$h2 = true;
@@ -152,21 +152,21 @@ Sets the HTML 5 video tag and it's attributes. See the full list of (video tag a
 	$names_file = 'names.txt';
 	$playlist_descriptions_file = 'descriptions.txt';
 
-#### Advanced Player configurable variables
+#### Advanced Configurable Variables
  
 	$offline = false; // for development only: use a local copy of jQuery rather than the Google CDN
 
 If your developing locally with no internet connection set this to true. Otherwise you can ignore this.
    
-#### filename variables
+#### Filename variables
 	$dir_offset_start = 3; // remove the first 'n' characters from the directory name i.e. 3 = '01_' from O1_Artwork
 	$file_offset_start = 0; // remove the first 'n' characters from the filename
 	$file_offset_end = -3; // remove the last 'n' characters before file extension i.e. -3 will remove '-sd' from filename-sd.mp4
 
-#### CSS body classes
+#### Css Body Classes
 	$body_classes = "player";
 
-#### Video sources, codecs, and media queries.
+#### Video Sources
 What codecs and mediaquries are to be used with certain filenames: i.e '-sd' = (Standard Definition), 'avc1.64001E, mp4a.40.2' h264 high profile, aac audio, 'all and (max-width: 854px). Media Queries should only be used if `$responsive = true`;
 
 	$video_sources = array();
@@ -176,7 +176,7 @@ What codecs and mediaquries are to be used with certain filenames: i.e '-sd' = (
 	$video_sources[] = array('filename_stem' => '-wb', 'codec' =>'vp8, vorbis', 'media' =>'');
 
 #### Which h264 file to use a flash fallback
-	$flash_fallback_source = '-sd';	
+	$flash_fallback_source = '-hd';	
 
 
 ### Useful Links for HTML 5 Video

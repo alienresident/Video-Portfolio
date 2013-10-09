@@ -6,8 +6,8 @@
 /**
  * movie dimensions
  */
-$w = 768;
-$h = 432;
+$w = 1280;
+$h = 720;
 
 /**
  * server config
@@ -39,7 +39,7 @@ $video_tag_attributes = 'controls autoplay';
 $flash_fallback = true;
 
 /**
- * content
+ * Content
  */
 $header = true;
 $h1 = false;
@@ -61,7 +61,7 @@ $playlist_descriptions_file = 'descriptions.txt';
 $offline = false; // for development only: use a local copy of jQuery rather than the Google CDN
    
 /**
- * filename variables: ignore 'n' characters from filenames
+ * Filename variables
  */
 $dir_offset_start = 3; // remove the first 'n' characters from the directory name i.e. 3 = '01_' from O1_Artwork
 $file_offset_start = 0; // remove the first 'n' characters from the filename
@@ -86,7 +86,7 @@ $video_sources[] = array('filename_stem' => '-wb', 'codec' =>'vp8, vorbis', 'med
 /**
  * Which h264 file to use a flash fallback
  */
-$flash_fallback_source = '-sd';
+$flash_fallback_source = '-hd';
 
 /**
  * rest of the php part, do not edit
