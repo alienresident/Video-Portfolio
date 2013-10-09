@@ -63,6 +63,7 @@ If you want to use a different naming scheme you can change the number of charac
 
 #### Video Sources, Codecs, and Media Queries.
 The `$video_sources` array (under [video sources](#video-sources) in the player config) tells the script what codec the video is encoded with. If the site is responsive it tells what the dimensions of the video are. These values are the ones from the [encoding script](https://github.com/alienresident/Video-Portfolio/blob/master/scripts/README.md).
+The `$video_sources` array (under [video sources](#video-sources) in the player config) tells the script what codec the video is encoded with. If the site is responsive it tells what the dimensions of the video are. These values are the ones from the [encoding script](https://github.com/alienresident/Video-Portfolio/blob/master/scripts/README.md#current-resolutions).
 
 	$video_sources = array();
 	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');

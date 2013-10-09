@@ -40,6 +40,7 @@ Current Resolutions
 | sd   | 768x432  | 1250k | 96k   | 16:9  | h264  | high     |
 | hd   | 1280x720 | 2500k | 128k  | 16:9  | h264  | high     |
 | wb   | 1280x720 | 2500k | 128k  | 16:9  | VP8   | N/A      |
+
 	 
 ### Feature Requests?
 I can make this script a little smarter if there's a need — open an issue or send me an email.
