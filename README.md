@@ -62,7 +62,6 @@ The script compares the file names of each video to see if they are different ve
 If you want to use a different naming scheme you can change the number of characters to remove. Look for `$file_offset_end` variable—under [filename variables](#filename-variables) in the player config file—this should be a negative number. You can also control the order of the videos, in the same way as with folder names, by numbering them and using the `$file_offset_start` variable—also under [filename variables](#filename-variables)—to remove _n_ characters (this should be a positive number). 
 
 #### Video Sources, Codecs, and Media Queries.
-The `$video_sources` array (under [video sources](#video-sources) in the player config) tells the script what codec the video is encoded with. If the site is responsive it tells what the dimensions of the video are. These values are the ones from the [encoding script](https://github.com/alienresident/Video-Portfolio/blob/master/scripts/README.md).
 The `$video_sources` array (under [video sources](#video-sources) in the player config) tells the script what codec the video is encoded with. If the site is responsive it tells what the dimensions of the video are. These values are the ones from the [encoding script](https://github.com/alienresident/Video-Portfolio/blob/master/scripts/README.md#current-resolutions).
 
 	$video_sources = array();
