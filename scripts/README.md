@@ -32,6 +32,14 @@ Here's a list of the current resolutions. This would be from a 16:9 HD source.
 	| hd   | 1280x720 | 2500k | 128k  | 16:9  | h264  | high     |
 	| wb   | 1280x720 | 2500k | 128k  | 16:9  | VP8   | N/A      |
 	 ------------------------------------------------------------
+	
+Current Resolutions
+
+| name | size     | video | audio | ratio | codec | profile  |
+| sm   | 512x288  | 550k  | 64k   | 16:9  | h264  | baseline |
+| sd   | 768x432  | 1250k | 96k   | 16:9  | h264  | high     |
+| hd   | 1280x720 | 2500k | 128k  | 16:9  | h264  | high     |
+| wb   | 1280x720 | 2500k | 128k  | 16:9  | VP8   | N/A      |
 	 
 ### Feature Requests?
 I can make this script a little smarter if there's a need — open an issue or send me an email.

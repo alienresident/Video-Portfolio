@@ -1,23 +1,17 @@
 <?php
 /**
- * the custom variables you should set
+ * Video Player Config: the Custom Variables You Can Set
  */
 
 /**
- * movie dimensions
- */
-$w = 1280;
-$h = 720;
-
-/**
- * server config
+ * Server Config
  */
 $dir = 'video';
 $playerurl = 'player.php';
 $root_dir = ''; 
  
 /**
- * page elements
+ * Page Elements
  */
 $websitename = 'Simple Video Portfolio';
 $stylesheet = $root_dir . 'css/global.css';
@@ -29,6 +23,12 @@ $prev_text = '<span class="hidden">Previous</span>';
 $next_text = '<span class="hidden">Next</span>';
 $playlist = true;
 $playlist_descriptions = true;
+
+/**
+ * Movie Dimensions
+ */
+$w = 1280;
+$h = 720;
 
 /**
  * Video Parameters
@@ -49,26 +49,26 @@ $footer = true;
 $footer_text = '<a href="https://github.com/alienresident/Video-Portfolio">Video Portfolio</a> (Github)';
 
 /**
- * Prettify file and directories names, and add playlist descriptions
+ * Prettify Filenames and Add Playlist Descriptions
  */
 $names_file = 'names.txt';
 $playlist_descriptions_file = 'descriptions.txt';
 
 /**
- * Advanced Player configurable variables
+ * Advanced Player Configurable Variables
  */
  
 $offline = false; // for development only: use a local copy of jQuery rather than the Google CDN
    
 /**
- * Filename variables
+ * Filename Variables
  */
 $dir_offset_start = 3; // remove the first 'n' characters from the directory name i.e. 3 = '01_' from O1_Artwork
 $file_offset_start = 0; // remove the first 'n' characters from the filename
 $file_offset_end = -3; // remove the last 'n' characters before file extension i.e. -3 will remove '-sd' from filename-sd.mp4
 
 /**
- * CSS body classes
+ * CSS Body Classes
  */
 $body_classes = "player";
 
@@ -84,12 +84,14 @@ $video_sources[] = array('filename_stem' => '-sm', 'codec' =>'avc1.42E01E, mp4a.
 $video_sources[] = array('filename_stem' => '-wb', 'codec' =>'vp8, vorbis', 'media' =>'');
 
 /**
- * Which h264 file to use a flash fallback
+ * Which h264 File to Use a Flash Fallback
  */
 $flash_fallback_source = '-hd';
 
+
+
 /**
- * rest of the php part, do not edit
+ * Rest of the Php Part, Do Not Edit
  */
 include_once('php/videoplayer.php');
 ?>

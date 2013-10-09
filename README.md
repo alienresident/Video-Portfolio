@@ -5,7 +5,7 @@
 
 Video Portfolio is a simple HTML 5 video player to showcase video-based portfolios. It's set up to deliver a great video experience no matter what browser or device your viewers have. 
 
-The video player is designed to be flexible, so while it has a lot of options, you can use the default setup and get started right away. Once it's set up, all you need to do is upload your videos.      
+The video player is designed to be flexible, so while it has a lot of options, you can use the default setup and get started right away. Once it's set up all you need to do is upload your videos.      
 
 ## What it does
 
@@ -23,7 +23,7 @@ __Directory Structure:__
 		01_Artwork/
 		O2_Promos/
 		
-In this example `player.php` is looking in the `videos` folder and sees 2 subfolders: `01_Artwork` and `O2_Promos`. It will look for videos in these folders and create a player. Since there are 2 subfolders in this example it will create navigation options so you can view the contents of both folders. Navigation options can be specified here. [TK] 
+In this example `player.php` is looking in the `videos` folder and sees 2 subfolders: `01_Artwork` and `O2_Promos`. It will look for videos in these folders and create a player. Since there are 2 subfolders in this example it will create navigation options so you can view the contents of both folders. Navigation options can be specified [here](#navigation-options) 
 
 ### How to Add Videos
 You can add just one version of your video or for better compatibility add multiple versions. It's recommended to add; a h264 video (high profile) for desktops, newer phones and tablets, and for the flash fallback; a webm video for Firefox and Opera browsers; and a h264 video (baseline profile) for older phones, tablets, and iPods.
@@ -51,30 +51,30 @@ You can either add as many different videos as you like to the same folder or ad
 ## Advanced Configuration Options
 
 ### Naming Conventions
-We want to have pretty (legible, human readable) names for our directories and videos without the hassle of updating HTML. So we have to go through a few tricky steps to do this. Essentially, we're converting machine-friendly text into human-friendly text (i.e. manipulating strings). We got some rules to follow _aka_ naming conventions to get this to work properly.
+We want to have pretty (legible, human readable) names for our directories and videos without the hassle of updating HTML. So we have to go through a few slightly tricky steps to do this. Essentially, we're converting machine-friendly text into human-friendly text (i.e. manipulating strings). We got some rules to follow _aka_ naming conventions to get this to work properly.
 
 ### Folder Names
 The sub folders by default will be in alphabetical order. Numbering the sub folders will make them appear in a particular order i.e. `01_Artwork`, `O2_Promos`, `03_Motion_Graphics`. However, we usually don't want to display these ordering numbers in the interface. In the player.php configuration settings, we can tell the script to ignore the first _n_ characters (the default is 3). The folders will be then listed as `Artwork`, `Promos`, `Motion Graphics`. If you want to use a different naming scheme you can change the numbers of characters to remove. See `$dir_offset_start` under [filename variables](#filename-variables) in the player config file.
 
-### File names
-The script compares the file names of each video to see if they are different versions of the same video i.e. `artwork_1-hd.mp4` and `artwork_1-sd.mp4` It  removes the last _n_ characters (the default is 3) i.e. `-hd` and `-sd` and compares the remaining name i.e. `artwork_1`. 
+### Video File Names
+The script compares the file names of each video to see if they are different versions of the same video i.e. `artwork_1-hd.mp4` and `artwork_1-sd.mp4`. It then  removes the last _n_ characters (the default is 3) i.e. `-hd` and `-sd` and compares the remaining name i.e. `artwork_1` to make sure it's the same.
 
-If you want to use a different naming scheme you can change the number of characters to remove. Look for `$file_offset_end` variable under [filename variables](#filename-variables) in the player config file (this should be a negative number). Similarly with folder names you can also control the order of the videos by numbering them and using the `$file_offset_start` variable under [filename variables](#filename-variables) to remove _n_ characters (this should be a positive number). 
+If you want to use a different naming scheme you can change the number of characters to remove. Look for `$file_offset_end` variable—under [filename variables](#filename-variables) in the player config file—this should be a negative number. You can also control the order of the videos, in the same way as with folder names, by numbering them and using the `$file_offset_start` variable—also under [filename variables](#filename-variables)—to remove _n_ characters (this should be a positive number). 
 
-#### Video sources, codecs, and media queries.
-The `$video_sources` array under [video sources](#video-sources) in the player config tells the script what codec the video is encoded with. If the site is responsive it tells what the dimensions of the video are. These values are the ones from the encoding script.
+#### Video Sources, Codecs, and Media Queries.
+The `$video_sources` array (under [video sources](#video-sources) in the player config) tells the script what codec the video is encoded with. If the site is responsive it tells what the dimensions of the video are. These values are the ones from the [encoding script](https://github.com/alienresident/Video-Portfolio/blob/master/scripts/README.md).
 
 	$video_sources = array();
 	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
 	[…]
 
-Responsive example: 
+__Responsive example:__ 
  
 	$video_sources = array();
 	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'all and (min-width: 1280px)');
 	[…]
 	
-Note: If you have changed the naming scheme be sure to change the filename stem here too. 
+__Note:__ If you have changed the video file naming scheme be sure to change the `filename_stem` here too.
 	
 
 ### Escaping or Substituting Characters in File and Folder Names
@@ -86,21 +86,15 @@ You can add in other characters here to. You can use this for abbreviations in f
 
 	/Big_Bunny/|Big&nbsp;Buck&nbsp;Bunny
 
-You can change the name of the `names.txt` to whatever you like by changing the `$names_file` variable.
+You can change the name of the `names.txt` to whatever you like by changing the `$names_file` variable (under [Prettify Names and Add Playlist Descriptions](#prettify-names-and-add-playlist-descriptions) in the player config).
 
 ### Adding Descriptions to the Playlist
 Adding description to the playlist is very similar to adding file and folder names. The `descriptions.txt` is used to add descriptions in the playlist. For the playlist descriptions to show up `$playlist` and `$playlist_descriptions` must be set to `true`. As the filenames have already been processed be sure to use the escaped version from the `names.txt` i.e. `Big&nbsp;Buck&nbsp;Bunny` not `big_buck_bunny`.
 
-You can also change the name of the `descriptions.txt` to whatever you like by changing the `$names_file` variable.
+You can also change the name of the `descriptions.txt` to whatever you like by changing the `$playlist_descriptions_file` variable  (under [Prettify Names and Add Playlist Descriptions](#prettify-names-and-add-playlist-descriptions) in the player config).
 
 ## Player Configuration Settings
 In `player.php` you have a long list of configuration options. They are broken down into sections that control different elements on the page.  
-
-#### Movie Dimensions
-	$w = 1280;
-	$h = 720;
-
-The standard dimensions of the player. Not used if `$responsive` is set to true
 
 #### Server Config 
 	$dir = 'video';
@@ -110,12 +104,6 @@ The standard dimensions of the player. Not used if `$responsive` is set to true
 Where the videos are. If you want to change `player.php` to something else i.e. `videos.php` be sure to update the `$playerurl` here. If your player is in a subdirectory add the correct relative path to root dir where the css, php, and javascript files are i.e. If you need to go up one level then `$root_dir = '../';`
    
 #### Page Elements
-
-* Set the name of the website and the style sheet.   
-* Choose whether or not to be a responsive site.   
-* Choose whether to use `mediaelementjs` to normalize the html 5 and flash player.
-
-&nbsp;
 	
 	$websitename = 'Video Portfolio';
 	$stylesheet = $root_dir . 'css/global.css';
@@ -123,7 +111,12 @@ Where the videos are. If you want to change `player.php` to something else i.e. 
 	$responsive = true;
 	$mediaelementplayer = true;
 
-__Navigation Options__	
+* Set the name of the website
+* Set the location of the stylesheet.   
+* Choose whether or not to be a responsive site.   
+* Choose whether to use `mediaelementjs` to style the look of html 5 and flash player.
+
+##### Navigation Options	
 	
 	$dropdown = true;
 	$prev_next = false;
@@ -132,8 +125,14 @@ __Navigation Options__
 	$playlist = true;
 	$playlist_descriptions = true;
 
+#### Movie Dimensions
+	$w = 1280;
+	$h = 720;
+
+The standard dimensions of the player. This is __not__ used if `$responsive` is set to `true`.
+
 #### Video Parameters
-Sets the HTML 5 video tag and it's attributes. See the full list of (video tag attributes)[http://html5doctor.com/the-video-element/]. Set whether or not you have a flash fallback.
+Sets the HTML 5 video tag and it's attributes (full list of [video tag attributes](http://html5doctor.com/the-video-element/)). Set whether or not you have a flash fallback.
 
 	$html5_video = true;
 	$poster_image = true;
@@ -148,11 +147,11 @@ Sets the HTML 5 video tag and it's attributes. See the full list of (video tag a
 	$footer = true;
 	$footer_text = '<a href="https://github.com/alienresident/Video-Portfolio">Video Portfolio</a> (Github)';
 
-#### Prettify file and directories names, and add playlist descriptions
+#### Prettify Names and Add Playlist Descriptions
 	$names_file = 'names.txt';
 	$playlist_descriptions_file = 'descriptions.txt';
 
-#### Advanced Configurable Variables
+### Advanced Configurable Variables
  
 	$offline = false; // for development only: use a local copy of jQuery rather than the Google CDN
 
@@ -163,7 +162,7 @@ If your developing locally with no internet connection set this to true. Otherwi
 	$file_offset_start = 0; // remove the first 'n' characters from the filename
 	$file_offset_end = -3; // remove the last 'n' characters before file extension i.e. -3 will remove '-sd' from filename-sd.mp4
 
-#### Css Body Classes
+#### CSS Body Classes
 	$body_classes = "player";
 
 #### Video Sources
