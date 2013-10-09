@@ -164,19 +164,30 @@ If your developing locally with no internet connection set this to true. Otherwi
 
 #### CSS Body Classes
 	$body_classes = "player";
+	
+__Note:__ the playlist adds to `$body_classes` so you can style things if you have a playlist on the page.
 
 #### Video Sources
-What codecs and mediaquries are to be used with certain filenames: i.e '-sd' = (Standard Definition), 'avc1.64001E, mp4a.40.2' h264 high profile, aac audio, 'all and (max-width: 854px). Media Queries should only be used if `$responsive = true`;
 
 	$video_sources = array();
-	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'all and (min-width: 1280px)');
-	$video_sources[] = array('filename_stem' => '-sd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'');
+	$video_sources[] = array('filename_stem' => '-hd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'all and (min-width: 855px)');
+	$video_sources[] = array('filename_stem' => '-sd', 'codec' =>'avc1.64001E, mp4a.40.2', 'media' =>'all and (min-width: 513px and max-width: 854px)');
 	$video_sources[] = array('filename_stem' => '-sm', 'codec' =>'avc1.42E01E, mp4a.40.2', 'media' =>'all and (max-width: 512px)'); 
 	$video_sources[] = array('filename_stem' => '-wb', 'codec' =>'vp8, vorbis', 'media' =>'');
+	
+What codecs and media queries are to be used with certain filenames: 
 
-#### Which h264 file to use a flash fallback
+* `-sd` video filename ends with a 3 character abbreviation (Standard Definition)
+* `avc1.64001E, mp4a.40.2` is h264 video using the high profile with AAC audio
+* `all and (min-width: 513px and max-width: 854px)`a media query that specifies a max-width and/or a min-width
+
+__Note:__ media queries should only be used if `$responsive = true`
+
+#### Flash Fallback
+
 	$flash_fallback_source = '-hd';	
-
+Which h264 file to use a flash fallback   
 
 ### Useful Links for HTML 5 Video
-[The State Of HTML5 Video](http://www.longtailvideo.com/html5/)
+[The State Of HTML5 Video](http://www.longtailvideo.com/html5/)  
+[HTML 5 video tag attributes](http://html5doctor.com/the-video-element/)
