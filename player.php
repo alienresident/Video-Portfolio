@@ -51,8 +51,8 @@ $footer_text = '<a href="https://github.com/alienresident/Video-Portfolio">Video
 /**
  * Prettify Filenames and Add Playlist Descriptions
  */
-$names_file = 'names.txt';
-$playlist_descriptions_file = 'descriptions.txt';
+$names_file = $root_dir . 'names.txt';
+$playlist_descriptions_file = $root_dir . 'descriptions.txt';
 
 /**
  * Advanced Player Configurable Variables
@@ -93,5 +93,5 @@ $flash_fallback_source = '-hd';
 /**
  * Rest of the Php Part, Do Not Edit
  */
-include_once('php/videoplayer.php');
+include_once($root_dir . 'php/videoplayer.php');
 ?>
