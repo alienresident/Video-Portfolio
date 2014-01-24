@@ -1,4 +1,4 @@
-<?
+<?php
 /*
  * Find files in a directory matching a pattern
  *
