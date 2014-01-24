@@ -333,7 +333,7 @@ function set_playlist_list_items($type, $url, $dirurl, $playerurl, $file_names_i
   foreach($type as $key => &$value) {
     if(!is_null($playlist_descriptions_file)) { 
       $ref = $value;
-      $description = video_code(&$ref, $playlist_descriptions_file);
+      $description = video_code($ref, $playlist_descriptions_file);
       $description = " <span>$description</span>";
     } else {
       $description = '';
